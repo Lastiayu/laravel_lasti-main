@@ -1,4 +1,4 @@
-@extends('template/master')
+@extends('template/user')
 @section('css')
 @endsection
 @section('content')

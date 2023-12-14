@@ -77,4 +77,11 @@ class UserController extends Controller
     {
 
     }
+
+    public function detail($id)
+    {
+            $user = User::find($id);
+
+        return view('user.detail', compact('user'));
+    }
 }

@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Other meta tags and CSS links -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <!-- Your content here -->
+@extends('template.master')
+@section('content')
     <br>
     <br>
     <div class="container text-center">
@@ -47,8 +39,7 @@
                             <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-edit"></i> Edit
                             </a>
-                            <form action="{{ route('tasks.destroy', $task->id) }}" method="POST"
-                                style="display: inline;">
+                            <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm"
@@ -78,6 +69,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    </body>
 
-</html>
+    </html>
