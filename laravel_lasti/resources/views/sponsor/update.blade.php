@@ -31,6 +31,14 @@
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
+                            <label>Deskripsi</label>
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                placeholder="Masukkan Deskripsi Brand">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-12 form-group">
                             <label>Alamat</label>
                             <input type="text" class="form-control" id="alamat" name="alamat"
                                 placeholder="Masukkan Alamat" value="{{ $sponsor->alamat }}">

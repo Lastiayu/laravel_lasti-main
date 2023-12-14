@@ -34,6 +34,7 @@ class SponsorController extends Controller
         $sponsor = Sponsor::create([
             'logo' => $logo->hashName(),
             'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
             'alamat' => $request->alamat,
             'email' => $request->email,
             'no_hp' => $request->no_hp,
@@ -89,6 +90,7 @@ class SponsorController extends Controller
         if ($request->file('logo') == "") {
             $sponsor->update([
                 'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
                 'alamat' => $request->alamat,
                 'email' => $request->email,
                 'no_hp' => $request->no_hp,
@@ -104,6 +106,7 @@ class SponsorController extends Controller
             $sponsor->update([
                 'logo' => $logo->hashName(),
                 'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
                 'alamat' => $request->alamat,
                 'email' => $request->email,
                 'no_hp' => $request->no_hp,

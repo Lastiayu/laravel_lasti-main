@@ -272,31 +272,10 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="widgets.html" aria-expanded="false">
-                            <i class="icon-badge menu-icon"></i><span class="nav-text">Event Terbaru</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">Aktivitas</li>
+                    <li class="nav-label">Profile</li>
                     <li>
                         <a class="has-arrow" href="{{ route('tasks.index') }}" aria-expanded="false">
-                            <i class="icon-grid menu-icon"></i><span class="nav-text">Todo List & Progress</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">Pengingat</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Pengingat</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Kalender</span>
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Profile</span>
                         </a>
                     </li>
             </div>

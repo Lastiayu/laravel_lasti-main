@@ -31,6 +31,13 @@
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
+                            <label>Deskripsi</label>
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                placeholder="Masukkan Deskripsi Brand">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-12 form-group">
                             <label>Alamat</label>
                             <input type="text" class="form-control" id="alamat" name="alamat"
                                 placeholder="Masukkan Alamat Brand">
@@ -92,7 +99,7 @@
 @section('js')
     <script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script>
-        $(functi $('#deskr    ipsimernote()
+        $(functi $('#deskripsimernote()
         })
     </script>
 @endsection
