@@ -179,6 +179,8 @@ return [
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
 
 
+
+
     ],
 
     /*
@@ -236,6 +238,8 @@ return [
 
         //Full Calender
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+
+
 
     ],
 

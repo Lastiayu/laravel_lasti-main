@@ -22,6 +22,7 @@ class CreateSponsorsTable extends Migration
             $table->string('no_hp');
             $table->string('nama_acara');
             $table->string('kategori');
+            $table->date('start_date');
             $table->string('feedback');
             $table->string('SnK');
             $table->timestamps();

@@ -273,13 +273,8 @@
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('chart.index') }}" aria-expanded="false">
                             <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="widgets.html" aria-expanded="false">
-                            <i class="icon-badge menu-icon"></i><span class="nav-text">Event Terbaru</span>
                         </a>
                     </li>
                     <li class="nav-label">Aktivitas</li>
@@ -288,14 +283,8 @@
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Todo List & Progress</span>
                         </a>
                     </li>
-                    <li class="nav-label">Pengingat</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Pengingat</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <li class="nav-label">Kalender</li>
+                        <a class="has-arrow" href="{{ route('event.display') }}" aria-expanded="false">
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Kalender</span>
                         </a>
                     </li>

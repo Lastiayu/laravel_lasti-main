@@ -22,7 +22,7 @@ class EventController extends Controller
             $enddate = $row->end_date."24:00:00";
             $event[] = \Calendar::event(
                 $row->title,
-                true,
+                false,
                 new \DateTime($row->start_date),
                 new \DateTime($row->end_date),
                 $row->id,
@@ -85,9 +85,11 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $events = Event::all();
+        return view('display')->with('events', $events);
+
     }
 
     /**
@@ -98,7 +100,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $events = Event::find($id);
+        return view('editform', compact('events', 'id'));
     }
 
     /**
@@ -110,8 +113,25 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'color' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
+        $event = Event::find($id);
+        $event->title = $request->input('title');
+        $event->color = $request->input('color');
+        $event->start_date = $request->input('start_date');
+        $event->end_date = $request->input('end_date');
+
+        $event->save();
+
+        // echo "data saved";
+        return redirect('events')->with('success', 'Event Updated');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -121,6 +141,8 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $events = Event::find($id);
+        $events->delete();
+        return redirect('events')->with('success', 'Event Deleted');
     }
 }

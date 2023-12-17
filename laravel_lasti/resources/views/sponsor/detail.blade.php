@@ -88,6 +88,11 @@
                     <div class="col-md-6"><?= $sponsor['kategori'] ?></div>
                 </div>
                 <div class="row">
+                    <div class="col-md-4">Tanggal Event</div>
+                    <div class="col-md-2">:</div>
+                    <div class="col-md-6"><?= $sponsor['start_date'] ?></div>
+                </div>
+                <div class="row">
                     <div class="col-md-4">Feedback</div>
                     <div class="col-md-2">:</div>
                     <div class="col-md-6"><?= $sponsor['feedback'] ?></div>

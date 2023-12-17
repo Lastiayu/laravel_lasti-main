@@ -40,6 +40,7 @@ class SponsorController extends Controller
             'no_hp' => $request->no_hp,
             'nama_acara' => $request->nama_acara,
             'kategori' => $request->kategori,
+            'start_date' => $request->start_date,
             'feedback' => $request->feedback,
             'SnK' => $request->SnK,
 
@@ -96,6 +97,7 @@ class SponsorController extends Controller
                 'no_hp' => $request->no_hp,
                 'nama_acara' => $request->nama_acara,
                 'kategori' => $request->kategori,
+                'start_date' => $request->start_date,
                 'feedback' => $request->feedback,
                 'SnK' => $request->SnK,
             ]);
@@ -112,6 +114,7 @@ class SponsorController extends Controller
                 'no_hp' => $request->no_hp,
                 'nama_acara' => $request->nama_acara,
                 'kategori' => $request->kategori,
+                'start_date' => $request->start_date,
                 'feedback' => $request->feedback,
                 'SnK' => $request->SnK,
             ]);

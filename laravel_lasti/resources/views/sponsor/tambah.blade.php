@@ -71,6 +71,13 @@
                                 placeholder="Masukkan Kategori Acara">
                         </div>
                     </div>
+                        <div class="row">
+                            <div class="col col-md-12 form-group">
+                                <label>Tanggal Event</label>
+                                <input type="date" class="form-control" id="start_date" name="start_date"
+                                    placeholder="Masukkan Tanggal Event">
+                            </div>
+                    </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Feedback</label>

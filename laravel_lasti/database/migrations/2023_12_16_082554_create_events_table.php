@@ -33,3 +33,4 @@ class CreateEventsTable extends Migration
         Schema::dropIfExists('events');
     }
 }
+ 

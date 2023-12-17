@@ -47,3 +47,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Calender
 Route::resource('/events','EventController');
 Route::get('/addeventurl', 'EventController@display');
+Route::get('/displaydata','EventController@show');
+Route::get('/deleteevent','EventController@show');

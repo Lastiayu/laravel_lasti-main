@@ -30,6 +30,7 @@
                         <th>Nama</th>
                         <th>Nama Acara</th>
                         <th>Kategori</th>
+                        <th>Tanggal Event</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -43,6 +44,7 @@
                             <td>{{ $data->nama }}</td>
                             <td>{{ $data->nama_acara }}</td>
                             <td>{{ $data->kategori }}</td>
+                            <td>{{ $data->start_date }}</td>
                             <td>
                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                     action="{{ route('sponsor.destroy', $data->id) }}" method="POST"
