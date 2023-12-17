@@ -43,3 +43,7 @@ Route::get('/taskshow', [TaskController::class,'showCompleted'])->name('taskhow'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Calender
+Route::resource('/events','EventController');
+Route::get('/addeventurl', 'EventController@display');
