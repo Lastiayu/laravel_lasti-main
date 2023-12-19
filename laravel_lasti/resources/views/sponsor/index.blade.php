@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
 @section('content')
+<div class="row">
+    <div class="col">
+        <div class="card-body">
+            {!! $MonthlySponsorChart->container() !!}
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Content</p>
+        </div>
+    </div>
+</div>
     @if (session()->has('success'))
         <div class="alert alert-primary">
             {{ session()->get('success') }}
@@ -98,5 +107,7 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
+        <script src="{{ $MonthlySponsorChart->cdn() }}"></script>
+        {{ $MonthlySponsorChart->script() }}
     </script>
 @endsection

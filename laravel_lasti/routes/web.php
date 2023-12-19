@@ -16,7 +16,7 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::get('/', function () {
-    return view('template/master');
+    return view('welcome');
 });
 
 // Route::get('/sponsor', function () {
