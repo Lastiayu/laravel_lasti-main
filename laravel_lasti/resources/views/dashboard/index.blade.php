@@ -7,43 +7,43 @@
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center">
           <h1>SponsoLink</h1>
-          <h2>We are team of talented designers</h2>
+          <h2>Cari Data Sponsor? Di SponsoLink Aja!</h2>
         </div>
       </div>
       <div class="text-center">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="" class="btn-get-started scrollto">Get Started</a>
       </div>
 
       <div class="row icon-boxes">
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
             <div class="icon"><i class="ri-stack-line"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <h4 class="title"><a href="">Event Olimpiade / Akademik</a></h4>
+            <p class="description">Sponsorship untuk event olimpiade / akademik dan sejenisnya</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
           <div class="icon-box">
             <div class="icon"><i class="ri-palette-line"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <h4 class="title"><a href="">Event Olahraga</a></h4>
+            <p class="description">Sponsorship untuk event olahraga dan sejenisnya</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
           <div class="icon-box">
             <div class="icon"><i class="ri-command-line"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <h4 class="title"><a href="">Event Keagamaan</a></h4>
+            <p class="description">Sponsorship untuk event keagamaan dan sejenisnya</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
           <div class="icon-box">
             <div class="icon"><i class="ri-fingerprint-line"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <h4 class="title"><a href="">Event Lainnya</a></h4>
+            <p class="description">Sponsorship untuk event lainnya</p>
           </div>
         </div>
 
