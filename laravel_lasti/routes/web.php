@@ -1,6 +1,6 @@
 <?php
-
-use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
