@@ -16,7 +16,7 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::get('/', function () {
-    return view('template/master');
+    return view('dashboard/index');
 });
 
 // Route::get('/sponsor', function () {
@@ -25,8 +25,7 @@ Route::get('/', function () {
 
 // Route::get('/sponsor', [SponsorController::class, 'index']);
 // Route::get('/sponsor', [SponsorController::class, 'create']);
-Route::resource('/sponsor', 'SponsorController');
-Route::get('/sponsor/detail/{id}', [SponsorController::class, 'detail'])->name('sponsor.detail');
+
 // Route::resource('user', UserController::class);
 Route::get('/tasks', [TaskController::class,'index'])->name('tasks.index');
 Route::get('/tasks/create', [TaskController::class,'create'])->name('tasks.create');

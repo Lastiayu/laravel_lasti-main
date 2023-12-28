@@ -1,4 +1,4 @@
-@extends('template/user')
+@extends('template/master')
 @section('css')
     <!-- DataTables -->
 
@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
 @section('content')
+    <div class="row">
+        <div class="col">
+            <div class="card-body">
+                {!! $MonthlySponsorChart->container() !!}
+                <h5 class="card-title">Title</h5>
+                <p class="card-text">Content</p>
+            </div>
+        </div>
+    </div>
     @if (session()->has('success'))
         <div class="alert alert-primary">
             {{ session()->get('success') }}
@@ -20,6 +29,7 @@
         </div>
         <div class="card-body">
 
+
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -27,6 +37,7 @@
                         <th>Nama</th>
                         <th>Nama Acara</th>
                         <th>Kategori</th>
+                        <th>Tanggal Event</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -35,14 +46,18 @@
                         <tr>
                             <td><img src="{{ Storage::url('sponsor/' . $data->logo) }}" style="width:150px"
                                     class="img-thumbnail">
+
                             </td>
                             <td>{{ $data->nama }}</td>
                             <td>{{ $data->nama_acara }}</td>
                             <td>{{ $data->kategori }}</td>
-                            <td>
-                                @csrf
-                                </form>
-                                &nbsp;
+                            <td>{{ $data->start_date }}</td>
+                            @csrf
+
+
+                            <a href="{{ route('user.detail', $data->id) }}" class="btn btn-outline-success btn-sm"><i
+                                    class="fa fa-info-circle"></i>Detail</a>
+
                             </td>
                         </tr>
                     @endforeach
@@ -56,8 +71,10 @@
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
-    <script src="{{ url('plugins/datatables-
-            responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script
+        src="{{ url('plugins/datatables-
+                                                                responsive/js/dataTables.responsive.min.js') }}">
+    </script>
 
     <script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.j') }}s"></script>
     <script src="{{ url('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
@@ -77,6 +94,9 @@
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
+        }); <
+        script src = "{{ $MonthlySponsorChart->cdn() }}" >
+    </script>
+    {{ $MonthlySponsorChart->script() }}
     </script>
 @endsection

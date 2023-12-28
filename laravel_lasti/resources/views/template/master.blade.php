@@ -262,13 +262,13 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Dashboard</li>
                     <li>
-                        <a class="has-arrow" href=":void()" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('dashboard.index') }}" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-label">Data</li>
                     <li>
-                        <a class="has-arrow" href="{{ route('sponsor.index') }}" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('user.index') }}" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>

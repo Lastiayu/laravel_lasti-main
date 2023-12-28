@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="text-center">
-        <a href="" class="btn-get-started scrollto">Get Started</a>
+        <a href="{{ route('user.index') }}" class="btn-get-started scrollto">Get Started</a>
       </div>
 
       <div class="row icon-boxes">
