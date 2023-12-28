@@ -75,4 +75,13 @@ class TaskController extends Controller
         $completedTasks = Task::where('completed',true)->orderBy('completed_at','desc')->get();
         return view('taskshow',compact('completedTasks'));
     }
+
+    public function show($id)
+    {
+        $task = Task::findOrFail($id);
+
+        return view('tasks.taskshow', compact('task'));
+    }
+
+
 }

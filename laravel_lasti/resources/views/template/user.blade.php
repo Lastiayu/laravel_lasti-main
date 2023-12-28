@@ -274,7 +274,7 @@
                     </li>
                     <li class="nav-label">Profile</li>
                     <li>
-                        <a class="has-arrow" href="{{ route('profile.index') }}" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('tasks.index') }}" aria-expanded="false">
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Profile</span>
                         </a>
                     </li>

@@ -12,10 +12,11 @@ class UserController extends Controller
     public function index(MonthlySponsorChart $monthlySponsorChart)
     {
         //$user = User::latest()->paginate(10);
-       // return view('user.index', compact('user')
+        // return view('user.index', compact('user')
         //'MonthlySponsorChart' => $monthlySponsorChart->build()
-        $users = User::latest()->paginate(10);
-        return view('user.index', compact('users', 'monthlySponsorChart'));
+        $chart = $monthlySponsorChart->build();
+
+        return view('user.index', compact('chart'));
 
     }
 
@@ -85,7 +86,7 @@ class UserController extends Controller
 
     public function detail($id)
     {
-            $user = User::find($id);
+        $user = User::find($id);
 
         return view('user.detail', compact('user'));
     }

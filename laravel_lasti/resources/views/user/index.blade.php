@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col">
             <div class="card-body">
-                {!! $monthlySponsorChart->build()->container() !!}
+                {!! $chart->container() !!}
                 <h5 class="card-title">Title</h5>
                 <p class="card-text">Content</p>
             </div>

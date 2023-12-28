@@ -1,4 +1,6 @@
-@extends('template/master')
+@extends('template.master')
+@section('css')
+@endsection
 @section('content')
     <br>
     <br>
@@ -30,3 +32,4 @@
     </body>
 
     </html>
+    @endsection
