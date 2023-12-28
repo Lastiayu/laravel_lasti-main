@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 Route::resource('/sponsor', 'SponsorController');
 Route::get('/sponsor/detail/{id}', [SponsorController::class, 'detail'])->name('sponsor.detail');
+
+Route::get('/chart', 'ChartController@showChart')->name('chart.index');
+
