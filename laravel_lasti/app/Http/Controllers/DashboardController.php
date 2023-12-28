@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index()
-    {
-        $sponsor = Dashboard::latest()->paginate(10);
-        return view('dashboard.index', compact('dashboard'));
-    }
+{
+    $dashboard = Dashboard::all(); // Gantilah dengan query atau data yang sesuai
+    return view('dashboard.index', compact('dashboard'));
+}
+
 }

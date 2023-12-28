@@ -3,6 +3,7 @@
 namespace App\Charts;
 
 use ArielMejiaDev\LarapexCharts\LarapexChart;
+use App\Models\Sponsor;
 
 class MonthlySponsorChart {
 
@@ -18,7 +19,9 @@ public function __construct (LarapexChart $chart)
 public function build(): \ArielMejiaDev\LarapexCharts\RadialChart
 {
 
-    $sponsor = Sponsor::groupBy('bulan')->get();
+    $sponsor = DB::table('sponsor')
+    ->select(DB::raw('EXTRACT(MONTH FROM created_at) as month, *'))
+    ->groupBy('month')->get();
     $data= [
         $sponsor->where('januari')->count(),
         $sponsor->where('februari')->count(),
@@ -57,7 +60,8 @@ public function build(): \ArielMejiaDev\LarapexCharts\RadialChart
     ->setHeight(500)
     ->addData($data)
     ->setLabels([$label])
-    ->setColors(['#FF0000', '#FFA500', '#FFFF00', '#0F9D58', '#1C52FB', '#CC8899', '#0A0A0A', '#F36196', '#80471C', '#073B3A', '#F97272', '#21D375']);
+    ->setColors(['#FF0000', '#FFA500', '#FFFF00', '#0F9D58', '#1C52FB', '#CC8899', '#0A0A0A', '#F36196', '#80471C', '#073B3A', '#F97272', '#21D375'])
+    ->container();
 
 }
 

@@ -272,20 +272,15 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="has-arrow" href="{{ route('chart.index') }}" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
-                        </a>
-                    </li>
                     <li class="nav-label">Aktivitas</li>
                     <li>
                         <a class="has-arrow" href="{{ route('tasks.index') }}" aria-expanded="false">
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Todo List & Progress</span>
                         </a>
                     </li>
-                    <li class="nav-label">Kalender</li>
+                    <li class="nav-label"> Kalender</li>
                         <a class="has-arrow" href="{{ route('event.display') }}" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Kalender</span>
+                            <i class="icon-menu menu-icon"></i><span class="nav-text"> Kalender</span>
                         </a>
                     </li>
             </div>
