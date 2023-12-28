@@ -23,6 +23,11 @@ Route::get('/', function () {
 //     return view('sponsor/index');
 // });
 
+Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
+
+Route::resource('/user', 'UserController');
+Route::get('/user/detail/{id}', [UserController::class, 'detail'])->name('user.detail');
+
 // Route::get('/sponsor', [SponsorController::class, 'index']);
 // Route::get('/sponsor', [SponsorController::class, 'create']);
 
