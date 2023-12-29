@@ -11,11 +11,6 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <div class="card-body">
-                {!! $chart->container() !!}
-                <h5 class="card-title">Title</h5>
-                <p class="card-text">Content</p>
-            </div>
         </div>
     </div>
     @if (session()->has('success'))
@@ -96,7 +91,4 @@
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         }); <
         script src = "{{ $MonthlySponsorChart->cdn() }}" >
-    </script>
-    {{ $MonthlySponsorChart->script() }}
-    </script>
 @endsection

@@ -1,24 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Charts\MonthlySponsorChart;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 
 class UserController extends Controller
 {
-    public function index(MonthlySponsorChart $monthlySponsorChart)
+    public function index()
     {
-        //$user = User::latest()->paginate(10);
-        // return view('user.index', compact('user')
-        //'MonthlySponsorChart' => $monthlySponsorChart->build()
-        $chart = $monthlySponsorChart->build();
-
-        return view('user.index', compact('chart'));
-
+        $user = User::latest()->paginate(10);
+        return view('user.index', compact('user'));
     }
+
 
 
     public function create()
