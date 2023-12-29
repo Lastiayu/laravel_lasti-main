@@ -18,6 +18,7 @@
             <tbody>
                 @foreach ($completedTasks as $task)
                     <tr>
+                        <td>{{ $task->id }}</td>
                         <td>{{ $task->title }}</td>
                         <td>{{ $task->description }}</td>
                         <td>{{ $task->completed_at }}</td>

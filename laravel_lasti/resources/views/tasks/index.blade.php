@@ -16,7 +16,7 @@
 
     <div class="container">
         <a href="{{ route('tasks.create') }}" class="btn btn-primary mb-3">Create Task</a>
-        <a href="{{ route('tasks.taskshow', ['id' => $tasks->id]) }}" class="btn btn-secondary mb-3">Show Completed Tasks</a>
+        <a href="{{ route('tasks.show', ['task' => $tasks->id]) }}" class="btn btn-secondary mb-3">Show Completed Tasks</a>
 
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -31,6 +31,7 @@
             <tbody>
                 @foreach ($tasks as $task)
                     <tr>
+                        <td>{{ $task->id }}</td>
                         <td>{{ $task->title }}</td>
                         <td>{{ $task->description }}</td>
                         <td>{{ $task->priority }}</td>
@@ -57,9 +58,6 @@
                                 </form>
                             @endif
                         </td>
-
-
-
                     </tr>
                 @endforeach
             </tbody>
