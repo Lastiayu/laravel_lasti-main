@@ -1,8 +1,3 @@
-@extends('template/auth')
-@section('content')
-@endsection
-
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -48,21 +43,23 @@
                             <div class="card-body pt-5">
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
-                                <a class="text-center" href="">
-                                    <h4>SponsoLink</h4>
-                                </a>
+                                    <a class="text-center" href="">
+                                        <h4>SponsoLink</h4>
+                                    </a>
 
-                                <form class="mt-5 mb-5 login-input">
-                                    <div class="form-group">
-                                        <label for="email"
-                                            class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-                                        <input id="email" type="email"
-                                            class="form-control @error('email') is-invalid @enderror" name="email"
-                                            value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <form class="mt-5 mb-5 login-input">
+                                        <div class="form-group">
+                                            <label for="email"
+                                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                            <input id="email" type="email"
+                                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                                value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="password"
@@ -81,25 +78,25 @@
                                     </form>
                                     <p class="mt-5 login-form__footer">Dont have account? <a href="page-register.html"
                                             class="text-primary">Sign Up</a> now</p>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
 
-        <!--**********************************
-            Scripts
-        ***********************************-->
-        <script src="plugins/common/common.min.js"></script>
-        <script src="js/custom.min.js"></script>
-        <script src="js/settings.js"></script>
-        <script src="js/gleek.js"></script>
-        <script src="js/styleSwitcher.js"></script>
-    </body>
+    <!--**********************************
+                Scripts
+            ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
 
-    </html>
+</html>

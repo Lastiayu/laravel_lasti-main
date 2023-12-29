@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Event;
 use Illuminate\Http\Request;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
@@ -15,12 +16,14 @@ class EventController extends Controller
      */
     public function index()
     {
+
+
         $events = Event::all();
         $event = [];
 
         foreach ($events as $row) {
-            $enddate = $row->end_date."24:00:00";
-            $event[] = \Calendar::event(
+            $enddate = $row->end_date . "24:00:00";
+            $event[] = Calendar::event(
                 $row->title,
                 false,
                 new \DateTime($row->start_date),
@@ -29,11 +32,11 @@ class EventController extends Controller
                 [
                     'color' => $row->color,
                 ]
-                );
+            );
         }
 
-        $calendar = \Calendar::addEvents($event);
-        return view ('eventpage', compact('events','calendar'));
+        $calendar = Calendar::addEvents($event);
+        return view('eventpage', compact('events', 'calendar'));
     }
 
     /**
@@ -55,12 +58,12 @@ class EventController extends Controller
 
     public function display()
     {
-        return view('addevent');
+        return view('event.addevent');
 
     }
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'title' => 'required',
             'color' => 'required',
             'start_date' => 'required',
@@ -75,7 +78,7 @@ class EventController extends Controller
         $events->end_date = $request->input('end_date');
 
         $events->save();
-        return redirect ('events')->width('success', 'Event Added');
+        return redirect('events')->width('success', 'Event Added');
 
     }
 
