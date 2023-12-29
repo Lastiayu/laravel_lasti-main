@@ -1,9 +1,10 @@
 <?php
-use App\Http\Controllers\Controller;
+// use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SponsorController;
 
 
 /*
@@ -43,9 +44,12 @@ Route::get('/tasks/{task}', [TaskController::class,'edit'])->name('tasks.edit');
 Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 Route::post('/tasks/{task}/complete', [TaskController::class, 'complete'])->name('tasks.complete');
-Route::get('/taskshow', [TaskController::class, 'showCompleted'])->name('taskshow');
-Route::get('/tasks/show/{id}', 'TaskController@show')->name('tasks.taskshow');
+Route::get('/taskshow', [TaskController::class, 'showCompleted'])->name('tasks.taskshow');
+// Route::get('/tasks/show/{id}', 'TaskController@show')->name('tasks.taskshow');
 
+
+// chart sponsor
+Route::get('/chart-sponsor', [SponsorController::class, 'getData'])->name('sponsor.getData');
 
 Auth::routes();
 

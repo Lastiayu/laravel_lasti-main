@@ -9,7 +9,8 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all(); // atau menggunakan query builder untuk filter data tertentu
+
+        $tasks = Task::where('completed', '=', 0)->get(); // ambil data dari database ketika kolom completed bernilai 0 yang artinya belum complete
         return view('tasks.index', compact('tasks'));
     }
 
@@ -25,7 +26,7 @@ class TaskController extends Controller
             'title' => 'required|max:255',
             'description' => 'nullable',
             'priority' => 'required|max:255',
-            'due_date' => 'nullavle|max:255',
+            'due_date' => 'nullable|max:255',
         ]);
         Task::create([
             'title' => $request->input('title'),
@@ -33,7 +34,7 @@ class TaskController extends Controller
             'priority' => $request->input('priority'),
             'due_date' => $request->input('due_date'),
         ]);
-        return redirect()->route('task.index')->with('success', 'Task Created Successfully!');
+        return redirect()->route('tasks.index')->with('success', 'Task Created Successfully!');
     }
 
     public function edit(Task $task)
@@ -66,16 +67,16 @@ class TaskController extends Controller
     public function complete(Task $task)
     {
         $task->update([
-            'completed'=>true,
-            'completed_at' =>now(),
+            'completed' => true,
+            'completed_at' => now(),
         ]);
-        return redirect('tasks.index')->with('success','Task Completed Successfully');
+        return redirect('tasks')->with('success', 'Task Completed Successfully');
     }
 
     public function showCompleted()
     {
-        $completedTasks = Task::where('completed',true)->orderBy('completed_at','desc')->get();
-        return view('taskshow',compact('completedTasks'));
+        $completedTasks = Task::where('completed', true)->orderBy('completed_at', 'desc')->get();
+        return view('tasks.taskshow', compact('completedTasks'));
     }
 
     public function show($id)

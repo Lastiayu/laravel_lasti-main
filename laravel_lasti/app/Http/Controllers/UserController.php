@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SponsorController;
 
@@ -12,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $sponsor = Sponsor::latest()->paginate(10);
-        return view('user.index', compact('user'));
+        return view('user.index', compact('sponsor'));
     }
 
 

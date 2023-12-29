@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-Use App\Models\User;
+use App\Models\User;
 
 
 class SponsorController extends Controller
@@ -147,8 +148,15 @@ class SponsorController extends Controller
     }
     public function detail($id)
     {
-            $sponsor = Sponsor::find($id);
+        $sponsor = Sponsor::find($id);
 
         return view('sponsor.detail', compact('sponsor'));
+    }
+
+    public function getData()
+    {
+        $tahunSekarang = now()->year;
+        $sponsor = Sponsor::select(DB::raw('MONTH(start_date) as month'))->whereYear('start_date', $tahunSekarang)->groupBy('month')->get();
+        return $sponsor;
     }
 }

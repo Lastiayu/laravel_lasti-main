@@ -2,7 +2,7 @@
     "use strict";
 
     //Team chart
-    var ctx = document.getElementById("team-chart");
+    var ctx = document.getElementById("chart-sponsor");
     ctx.height = 150;
     var myChart = new Chart(ctx, {
         type: 'line',

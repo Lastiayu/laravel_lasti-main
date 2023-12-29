@@ -18,130 +18,17 @@
             {{ session()->get('success') }}
         </div>
     @endif
-    // Area Chart Example
-    axios.get("http://localhost:8000/chart-sponsor").then((resp) => {
-    const dataS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    resp.data.forEach((element) => {
-    dataS[element.month - 1] = element.total_quantity;
-    });
 
-    var ctx = document.getElementById("chart-sponsor");
-
-    console.log(dataS);
-    var myLineChart = new Chart(ctx, {
-    type: "line",
-    data: {
-    labels: [
-    "JAN",
-    "FEB",
-    "MAR",
-    "APR",
-    "MAY",
-    "JUN",
-    "JUL",
-    "AUG",
-    "SEP",
-    "OCT",
-    "NOV",
-    "DEC",
-    ],
-    datasets: [
-    {
-    label: "Quantity",
-    lineTension: 0.3,
-    backgroundColor: "rgba(78, 115, 223, 0.05)",
-    borderColor: "rgba(78, 115, 223, 1)",
-    pointRadius: 3,
-    pointBackgroundColor: "rgba(78, 115, 223, 1)",
-    pointBorderColor: "rgba(78, 115, 223, 1)",
-    pointHoverRadius: 3,
-    pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-    pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-    pointHitRadius: 10,
-    pointBorderWidth: 2,
-    data: dataS,
-    },
-    ],
-    },
-    options: {
-    maintainAspectRatio: false,
-    layout: {
-    padding: {
-    left: 10,
-    right: 25,
-    top: 25,
-    bottom: 0,
-    },
-    },
-    scales: {
-    xAxes: [
-    {
-    time: {
-    unit: "date",
-    },
-    gridLines: {
-    display: false,
-    drawBorder: false,
-    },
-    ticks: {
-    maxTicksLimit: 7,
-    },
-    },
-    ],
-    yAxes: [
-    {
-    ticks: {
-    maxTicksLimit: 5,
-    padding: 10,
-    // Include a dollar sign in the ticks
-    callback: function (value, index, values) {
-    return "" + number_format(value);
-    },
-    },
-    gridLines: {
-    color: "rgb(234, 236, 244)",
-    zeroLineColor: "rgb(234, 236, 244)",
-    drawBorder: false,
-    borderDash: [2],
-    zeroLineBorderDash: [2],
-    },
-    },
-    ],
-    },
-    legend: {
-    display: false,
-    },
-    tooltips: {
-    backgroundColor: "rgb(255,255,255)",
-    bodyFontColor: "#858796",
-    titleMarginBottom: 10,
-    titleFontColor: "#6e707e",
-    titleFontSize: 14,
-    borderColor: "#dddfeb",
-    borderWidth: 1,
-    xPadding: 15,
-    yPadding: 15,
-    displayColors: false,
-    intersect: false,
-    mode: "index",
-    caretPadding: 10,
-    callbacks: {
-    label: function (tooltipItem, chart) {
-    var datasetLabel =
-    chart.datasets[tooltipItem.datasetIndex].label ||
-    "";
-    return (
-    datasetLabel +
-    ": " +
-    number_format(tooltipItem.yLabel)
-    );
-    },
-    },
-    },
-    },
-    });
-    });
-
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Chart Gblk</h3>
+        </div>
+        <div class="card-body">
+            <div class="chart-area">
+                <canvas id="chart-sponsor"></canvas>
+            </div>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Data Table Sponsor</h3>
@@ -173,9 +60,9 @@
                             <td>{{ $data->start_date }}</td>
                             @csrf
 
-
-                            <a href="{{ route('user.detail', $data->id) }}" class="btn btn-outline-success btn-sm"><i
-                                    class="fa fa-info-circle"></i>Detail</a>
+                            <td>
+                                <a href="{{ route('user.detail', $data->id) }}" class="btn btn-outline-success btn-sm"><i
+                                        class="fa fa-info-circle"></i>Detail</a>
 
                             </td>
                         </tr>
@@ -188,12 +75,10 @@
 @section('js')
     <!-- DataTables & Plugins -->
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('plugins-init/') }}"></script>
     <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
-    <script
-        src="{{ url('plugins/datatables-
-                                                                                responsive/js/dataTables.responsive.min.js') }}">
-    </script>
+    <script src="{{ url('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 
     <script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.j') }}s"></script>
     <script src="{{ url('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
@@ -213,6 +98,125 @@
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        }); <
-        script src = "{{ $MonthlySponsorChart->cdn() }}" >
-        @endsection
+        });
+    </script>
+    <script>
+        // Area Chart Example
+        axios.get("http://localhost:8000/chart-sponsor").then((resp) => {
+            const dataS = [10, 11, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0];
+            // resp.data.forEach((element) => {
+            //     dataS[element.month - 1] = element.total_quantity;
+            // });
+
+            var ctx = document.getElementById("chart-sponsor");
+
+            console.log(dataS);
+            var myLineChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: [
+                        "JAN",
+                        "FEB",
+                        "MAR",
+                        "APR",
+                        "MAY",
+                        "JUN",
+                        "JUL",
+                        "AUG",
+                        "SEP",
+                        "OCT",
+                        "NOV",
+                        "DEC",
+                    ],
+                    datasets: [{
+                        label: "Quantity",
+                        lineTension: 0.3,
+                        backgroundColor: "rgba(78, 115, 223, 0.05)",
+                        borderColor: "rgba(78, 115, 223, 1)",
+                        pointRadius: 3,
+                        pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                        pointBorderColor: "rgba(78, 115, 223, 1)",
+                        pointHoverRadius: 3,
+                        pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
+                        data: dataS,
+                    }, ],
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 25,
+                            top: 25,
+                            bottom: 0,
+                        },
+                    },
+                    scales: {
+                        xAxes: [{
+                            time: {
+                                unit: "date",
+                            },
+                            gridLines: {
+                                display: false,
+                                drawBorder: false,
+                            },
+                            ticks: {
+                                maxTicksLimit: 7,
+                            },
+                        }, ],
+                        yAxes: [{
+                            ticks: {
+                                maxTicksLimit: 5,
+                                padding: 10,
+                                // Include a dollar sign in the ticks
+                                callback: function(value, index, values) {
+                                    return "" + number_format(value);
+                                },
+                            },
+                            gridLines: {
+                                color: "rgb(234, 236, 244)",
+                                zeroLineColor: "rgb(234, 236, 244)",
+                                drawBorder: false,
+                                borderDash: [2],
+                                zeroLineBorderDash: [2],
+                            },
+                        }, ],
+                    },
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyFontColor: "#858796",
+                        titleMarginBottom: 10,
+                        titleFontColor: "#6e707e",
+                        titleFontSize: 14,
+                        borderColor: "#dddfeb",
+                        borderWidth: 1,
+                        xPadding: 15,
+                        yPadding: 15,
+                        displayColors: false,
+                        intersect: false,
+                        mode: "index",
+                        caretPadding: 10,
+                        callbacks: {
+                            label: function(tooltipItem, chart) {
+                                var datasetLabel =
+                                    chart.datasets[tooltipItem.datasetIndex].label ||
+                                    "";
+                                return (
+                                    datasetLabel +
+                                    ": " +
+                                    number_format(tooltipItem.yLabel)
+                                );
+                            },
+                        },
+                    },
+                },
+            });
+        });
+    </script>
+@endsection
