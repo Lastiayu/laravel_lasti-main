@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'users';
     protected $fillable = [
@@ -20,4 +20,7 @@ class User extends Model
         'password',
         // 'remember_token',
     ];
+
+    const CREATED_AT = "created_at";
+    const UPDATED_AT = "updated_at";
 }
