@@ -9,9 +9,10 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::where('completed', false)->orderBy('priority', 'desc')->orderBy('due_date')->get();
+        $tasks = Task::all(); // atau menggunakan query builder untuk filter data tertentu
         return view('tasks.index', compact('tasks'));
     }
+
 
     public function create()
     {
@@ -54,17 +55,18 @@ class TaskController extends Controller
             'priority' => $request->input('priority'),
             'due_date' => $request->input('due_date'),
         ]);
-        return redirect()->route('task.index')->with('success', 'Task Created Successfully!');
+        return redirect()->route('tasks.index')->with('success', 'Task Created Successfully!');
     }
     public function destroy(Task $task)
     {
         $task->delete();
-        return redirect('tasks.index')->with('success','Task Deleted Successfully');
+        return redirect()->route('tasks.index')->with('success', 'Task Deleted Successfully');
+
     }
     public function complete(Task $task)
     {
         $task->update([
-            'complated'=>true,
+            'completed'=>true,
             'completed_at' =>now(),
         ]);
         return redirect('tasks.index')->with('success','Task Completed Successfully');

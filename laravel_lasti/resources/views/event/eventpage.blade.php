@@ -44,7 +44,7 @@
                         <p>{{ \Session::get('success') }}</p>
                     </div>
                 @endif
-                
+
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading" style="background: #2e6da4; color: white;">
