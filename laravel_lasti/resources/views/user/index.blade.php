@@ -75,7 +75,6 @@
 @section('js')
     <!-- DataTables & Plugins -->
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('plugins-init/') }}"></script>
     <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
     <script src="{{ url('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
