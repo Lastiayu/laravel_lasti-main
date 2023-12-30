@@ -156,9 +156,10 @@ class SponsorController extends Controller
 
     public function getData()
     {
-        $tahunSekarang = now()->year;
-        $sponsor = Sponsor::select(DB::raw('MONTH(start_date) as month'))->whereYear('start_date', $tahunSekarang)->groupBy('month')->get();
-        return $sponsor;
+        $data = Sponsor::selectRaw('MONTH(start_date) as month, COUNT(*) as total')
+            ->groupByRaw('MONTH(start_date)')
+            ->get();
+            return response()->json($data);
     }
 
     public function sponsorChart()

@@ -90,7 +90,7 @@
                                         </div>
                                         <button type="submit" class="btn login-form__btn submit w-100">Sign in</button>
                                     </form>
-                                    <p class="mt-5 login-form__footer">Have account <a href="page-login.html"
+                                    <p class="mt-5 login-form__footer">Have account <a href="/register"
                                             class="text-primary">Sign Up </a> now</p>
                                     </p>
                             </div>

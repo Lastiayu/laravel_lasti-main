@@ -74,6 +74,7 @@
 @endsection
 @section('js')
     <!-- DataTables & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
@@ -99,13 +100,11 @@
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
     </script>
-    <script>
+    {{-- <script>
         // Area Chart Example
         axios.get("http://localhost:8000/chart-sponsor").then((resp) => {
             const dataS = [10, 11, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0];
-            // resp.data.forEach((element) => {
-            //     dataS[element.month - 1] = element.total_quantity;
-            // });
+
 
             var ctx = document.getElementById("chart-sponsor");
 
@@ -217,5 +216,5 @@
                 },
             });
         });
-    </script>
+    </script> --}}
 @endsection

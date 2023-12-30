@@ -83,8 +83,9 @@ class UserController extends Controller
 
     public function detail($id)
     {
-        $user = User::find($id);
+        $sponsor = Sponsor::find($id);
 
-        return view('user.detail', compact('user'));
+        return view('user.detail', compact('sponsor'));
     }
+
 }
