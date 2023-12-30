@@ -55,10 +55,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Calender
-Route::resource('/events','EventController');
-Route::get('/addeventurl', 'EventController@display');
-Route::get('/displaydata','EventController@show');
-Route::get('/deleteevent','EventController@show');
-Route::get('/event/display', 'EventController@display')->name('event.display');
+
 

@@ -7,6 +7,7 @@ use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use ConsoleTVs\Charts\Registrar as Charts;
 
 
 class SponsorController extends Controller
@@ -158,5 +159,23 @@ class SponsorController extends Controller
         $tahunSekarang = now()->year;
         $sponsor = Sponsor::select(DB::raw('MONTH(start_date) as month'))->whereYear('start_date', $tahunSekarang)->groupBy('month')->get();
         return $sponsor;
+    }
+
+    public function sponsorChart()
+    {
+        $data = Sponsor::selectRaw('MONTH(start_date) as month, COUNT(*) as total')
+            ->groupByRaw('MONTH(start_date)')
+            ->get();
+
+        return view('sponsorChart', [
+            'chart' => $this->sponsorChart($data)
+        ]);
+    }
+
+    protected function generateSponsorChart($data)
+    {
+        return Chartisan::build()
+            ->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
+            ->dataset('Sponsor Count', $data->pluck('total'));
     }
 }

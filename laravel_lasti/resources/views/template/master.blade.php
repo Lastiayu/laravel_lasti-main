@@ -279,7 +279,7 @@
                         </a>
                     </li>
                     <li class="nav-label"> Kalender</li>
-                        <a class="has-arrow" href="{{ route('event.display') }}" aria-expanded="false">
+                        <a class="has-arrow" href="" aria-expanded="false">
                             <i class="icon-menu menu-icon"></i><span class="nav-text"> Kalender</span>
                         </a>
                     </li>
