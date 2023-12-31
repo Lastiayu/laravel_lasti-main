@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\FullCalenderController;
+
 
 
 /*
@@ -55,5 +57,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('/sponsor', 'SponsorController');
+Route::get('/sponsor/detail/{id}', [SponsorController::class, 'detail'])->name('sponsor.detail');
 
+Route::get('/sponsor', 'SponsorController@index')->name('sponsor.index');
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+
+Route::prefix('fullcalender')->group(function () {
+    Route::get('/', [FullCalenderController::class, 'index']);
+    Route::post('/fullcalenderAjax', [FullCalenderController::class, 'ajax']);
+});
 

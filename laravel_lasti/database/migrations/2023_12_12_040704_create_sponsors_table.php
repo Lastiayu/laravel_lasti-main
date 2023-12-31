@@ -17,6 +17,7 @@ class CreateSponsorsTable extends Migration
             $table->id();
             $table->string('logo');
             $table->string('nama');
+            $table->string('deskripsi');
             $table->string('alamat');
             $table->string('email');
             $table->string('no_hp');

@@ -1,5 +1,12 @@
 @extends('template/user')
+@section('css')
+@endsection
 @section('content')
+    @if (session()->has('success'))
+        <div class="alert alert-primary">
+            {{ session()->get('success') }}
+        </div>
+    @endif
     <br>
     <div class="col">
         <div class="card card-primary">

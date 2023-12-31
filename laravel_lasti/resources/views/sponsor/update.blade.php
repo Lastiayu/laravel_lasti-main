@@ -1,4 +1,6 @@
 @extends('template/user')
+@section('css')
+@endsection
 @section('content')
     <br>
     <div class="col">

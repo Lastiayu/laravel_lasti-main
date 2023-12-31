@@ -44,10 +44,8 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+                        <img style="width: 170px" src="images/logoo.png" alt="">
                     </span>
                 </a>
             </div>
@@ -218,7 +216,7 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img src="images/users/profile2.jpg" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
@@ -260,21 +258,16 @@
         <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
-                    <li>
-                        <a class="has-arrow" href=":void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
-                        </a>
-                    </li>
+
                     <li class="nav-label">Data</li>
                     <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
+                        <a class="has-arrow" href="/sponsor" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>
                     <li class="nav-label">Profile</li>
                     <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
+                        <a class="has-arrow" href="/profile" aria-expanded="false">
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Profile</span>
                         </a>
                     </li>

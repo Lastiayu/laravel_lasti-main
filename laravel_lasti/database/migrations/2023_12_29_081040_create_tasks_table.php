@@ -13,8 +13,15 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::table('tasks', function (Blueprint $table) {
-            //
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->enum('priority', ['low', 'medium', 'high']);
+            $table->date('due_date');
+            $table->boolean('completed')->default(false);
+            $table->timestamps(); // Timestamps umum
+            $table->timestamp('completed_at')->nullable(); // Timestamp untuk waktu penyelesaian (bisa null jika belum selesai)
         });
     }
 
@@ -25,8 +32,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::table('tasks', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('tasks');
     }
 }

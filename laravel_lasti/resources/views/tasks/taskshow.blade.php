@@ -1,6 +1,9 @@
 @extends('template.master')
+
 @section('css')
+    <!-- Tambahkan link CSS yang diperlukan jika ada -->
 @endsection
+
 @section('content')
     <br>
     <br>

@@ -44,10 +44,9 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+                        <img style="width: 170px" src="images/logoo.png" alt="">
+
                     </span>
                 </a>
             </div>
@@ -218,7 +217,7 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img src="images/users/profile.jpg" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
@@ -339,6 +338,11 @@
     <script src="{{ url('js/settings.js') }}"></script>
     <script src="{{ url('js/gleek.js') }}"></script>
     <script src="{{ url('js/styleSwitcher.js') }}"></script>
+    <!-- Page level plugins -->
+    <script src="{{ url('js/vendor/chart.js/Chart.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ url('js/js/demo/chart-area-demo.js')}}"></script>
     <script>
         $(" .custom-file-input").on("change", function() {
             var filename = $(this).val().split("\\").pop();
