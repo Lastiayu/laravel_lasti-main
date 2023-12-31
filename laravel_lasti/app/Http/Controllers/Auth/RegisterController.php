@@ -74,7 +74,9 @@ class RegisterController extends Controller
         ]);
 
         if ($data) {
-            return redirect('')
+            return redirect('');
+
+
         }
     }
 }
