@@ -175,8 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //Full Calender
-        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+    
 
 
 

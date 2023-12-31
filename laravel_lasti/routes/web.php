@@ -63,8 +63,7 @@ Route::get('/sponsor/detail/{id}', [SponsorController::class, 'detail'])->name('
 Route::get('/sponsor', 'SponsorController@index')->name('sponsor.index');
 Route::get('/profile', 'ProfileController@index')->name('profile.index');
 
-Route::prefix('fullcalender')->group(function () {
-    Route::get('/', [FullCalenderController::class, 'index']);
-    Route::post('/fullcalenderAjax', [FullCalenderController::class, 'ajax']);
-});
+Route::get('full-calender', [FullCalenderController::class, 'index'])->name('full-calender');
+Route::post('full-calender/action', [FullCalenderController::class, 'action'])->name('full-calender.action');
+
 

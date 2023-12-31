@@ -278,10 +278,9 @@
                         </a>
                     </li>
                     <li class="nav-label"> Kalender</li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text"> Kalender</span>
-                        </a>
-                    </li>
+                    <a class="has-arrow" href="{{ route('full-calender') }}" aria-expanded="false">
+                        <i class="icon-menu menu-icon"></i><span class="nav-text"> Kalender</span>
+                    </a>
             </div>
         </div>
         <!--**********************************
@@ -342,7 +341,7 @@
     <script src="{{ url('js/vendor/chart.js/Chart.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ url('js/js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{ url('js/js/demo/chart-area-demo.js') }}"></script>
     <script>
         $(" .custom-file-input").on("change", function() {
             var filename = $(this).val().split("\\").pop();
