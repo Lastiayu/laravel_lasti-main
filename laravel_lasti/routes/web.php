@@ -6,6 +6,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\FullCalenderController;
+use App\Http\Controllers\Auth\RegisterController;
 
 
 
@@ -67,3 +68,10 @@ Route::get('full-calender', [FullCalenderController::class, 'index'])->name('ful
 Route::post('full-calender/action', [FullCalenderController::class, 'action'])->name('full-calender.action');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);

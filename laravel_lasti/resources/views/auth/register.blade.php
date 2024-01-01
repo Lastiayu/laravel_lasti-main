@@ -10,30 +10,23 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
-
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body class="h-100">
-
     <!--*******************
         Preloader start
     ********************-->
     <div id="preloader">
         <div class="loader">
             <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3"
-                    stroke-miterlimit="10" />
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
             </svg>
         </div>
     </div>
     <!--*******************
         Preloader end
     ********************-->
-
-
-
-
 
     <div class="login-form-bg h-100">
         <div class="container h-100">
@@ -49,50 +42,49 @@
                                         <h4>SponsoLink</h4>
                                     </a>
 
+                                    <div class="form-group">
+                                        <label for="name"
+                                            class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                                        <input id="name" type="text"
+                                            class="form-control @error('name') is-invalid @enderror" name="name"
+                                            value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                        <div class="form-group">
-                                            <label for="name"
-                                                class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-                                            <input id="name" type="text"
-                                                class="form-control @error('name') is-invalid @enderror" name="name"
-                                                value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email"
+                                            class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                        <input id="email" type="email"
+                                            class="form-control @error('email') is-invalid @enderror" name="email"
+                                            value="{{ old('email') }}" required autocomplete="email">
 
-                                            @error('name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email"
-                                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-                                            <input id="email" type="email"
-                                                class="form-control @error('email') is-invalid @enderror" name="email"
-                                                value="{{ old('email') }}" required autocomplete="email">
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password"
+                                            class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                        <input id="password" type="password"
+                                            class="form-control @error('password') is-invalid @enderror"
+                                            name="password" required autocomplete="new-password">
 
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password"
-                                                class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-                                            <input id="password" type="password"
-                                                class="form-control @error('password') is-invalid @enderror"
-                                                name="password" required autocomplete="new-password">
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                        <button type="submit" class="btn login-form__btn submit w-100">Sign in</button>
-                                    </form>
-                                    <p class="mt-5 login-form__footer">Have account <a href="/register"
-                                            class="text-primary">Sign Up </a> now</p>
-                                    </p>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <button type="submit" class="btn login-form__btn submit w-100">Sign in</button>
+                                </form>
+                                <p class="mt-5 login-form__footer">Have an account? <a href="{{ route('login') }}"
+                                        class="text-primary">Sign In</a> now</p>
                             </div>
                         </div>
                     </div>
@@ -100,10 +92,6 @@
             </div>
         </div>
     </div>
-    </div>
-
-
-
 
     <!--**********************************
 Scripts
