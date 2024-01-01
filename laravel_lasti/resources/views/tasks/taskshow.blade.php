@@ -13,6 +13,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>No</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Completion Date</th>
