@@ -20,14 +20,8 @@
     @endif
 
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Chart Gblk</h3>
-        </div>
-        <div class="card-body">
-            <div class="chart-area">
-                <canvas id="chart-sponsor"></canvas>
-            </div>
-        </div>
+
+        
     </div>
     <div class="card">
         <div class="card-header">

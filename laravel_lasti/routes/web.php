@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -62,7 +63,7 @@ Route::resource('/sponsor', 'SponsorController');
 Route::get('/sponsor/detail/{id}', [SponsorController::class, 'detail'])->name('sponsor.detail');
 
 Route::get('/sponsor', 'SponsorController@index')->name('sponsor.index');
-Route::get('/profile', 'ProfileController@index')->name('profile.index');
+
 
 Route::get('full-calender', [FullCalenderController::class, 'index'])->name('full-calender');
 Route::post('full-calender/action', [FullCalenderController::class, 'action'])->name('full-calender.action');
@@ -79,3 +80,6 @@ Route::post('/register', [RegisterController::class, 'register']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/profile', [ProfileController::class,'index'])->name('profile.index');
+

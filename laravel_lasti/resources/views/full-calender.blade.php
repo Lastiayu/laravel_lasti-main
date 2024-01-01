@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +15,7 @@
 
 <div class="container">
     <br />
-    <h1 class="text-center text-primary"><u>Kalender</u></h1>
+    <h1 class="text-center text-primary"><u></u></h1>
     <br />
 
     <div id="calendar"></div>
