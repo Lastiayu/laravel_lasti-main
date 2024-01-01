@@ -1911,7 +1911,7 @@ section {
             </div>
         </div>
         <div class="text-center">
-            <a href="{{ route('user.index') }}" class="btn-get-started scrollto">Get Started</a>
+            <a href="{{ route('other.index') }}" class="btn-get-started scrollto">Get Started</a>
         </div>
 
         <div class="row icon-boxes">

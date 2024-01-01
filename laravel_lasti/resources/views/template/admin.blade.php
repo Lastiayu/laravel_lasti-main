@@ -46,6 +46,7 @@
                 <a href="index.html">
                     <span class="brand-title">
                         <img style="width: 170px" src="images/logoo.png" alt="">
+
                     </span>
                 </a>
             </div>
@@ -218,7 +219,7 @@
                                 <span class="activity active"></span>
                                 <img src="images/users/profile2.jpg" height="40" width="40" alt="">
                             </div>
-                            <div class="drop-down dropdown-profile   dropdown-menu">
+                            <div class="drop-down dropdown-profile dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
@@ -231,18 +232,23 @@
                                                 <div class="badge gradient-3 badge-pill badge-primary">3</div>
                                             </a>
                                         </li>
-
                                         <hr class="my-2">
                                         <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
-                                                    Screen</span></a>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                                        <li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <i class="icon-key"></i> <span>Logout</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -258,16 +264,15 @@
         <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-
                     <li class="nav-label">Data</li>
                     <li>
-                        <a class="has-arrow" href="/sponsor" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('sponsor.index') }}" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>
                     <li class="nav-label">Profile</li>
                     <li>
-                        <a class="has-arrow" href="/profile" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('profile.index') }}" aria-expanded="false">
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Profile</span>
                         </a>
                     </li>
@@ -287,7 +292,7 @@
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="">Home</a></li>
                     </ol>
                 </div>
             </div>
@@ -327,6 +332,11 @@
     <script src="{{ url('js/settings.js') }}"></script>
     <script src="{{ url('js/gleek.js') }}"></script>
     <script src="{{ url('js/styleSwitcher.js') }}"></script>
+    <!-- Page level plugins -->
+    <script src="{{ url('js/vendor/chart.js/Chart.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ url('js/js/demo/chart-area-demo.js') }}"></script>
     <script>
         $(" .custom-file-input").on("change", function() {
             var filename = $(this).val().split("\\").pop();

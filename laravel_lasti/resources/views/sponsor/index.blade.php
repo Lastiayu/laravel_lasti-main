@@ -1,4 +1,4 @@
-@extends('template/user')
+@extends('template/admin')
 @section('css')
     <!-- DataTables -->
 

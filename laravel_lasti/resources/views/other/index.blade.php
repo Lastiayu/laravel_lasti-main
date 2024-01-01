@@ -61,7 +61,7 @@
                             @csrf
 
                             <td>
-                                <a href="{{ route('user.detail', $data->id) }}" class="btn btn-outline-success btn-sm"><i
+                                <a href="{{ route('other.detail', $data->id) }}" class="btn btn-outline-success btn-sm"><i
                                         class="fa fa-info-circle"></i>Detail</a>
 
                             </td>

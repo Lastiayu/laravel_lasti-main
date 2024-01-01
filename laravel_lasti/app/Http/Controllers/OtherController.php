@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Models\Other;
 use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SponsorController;
 
 
 
-class UserController extends Controller
+class OtherController extends Controller
 {
     public function index()
     {
         $sponsor = Sponsor::latest()->paginate(10);
-        return view('user.index', compact('sponsor'));
+        return view('other.index', compact('sponsor'));
     }
 
 
@@ -39,10 +39,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Other $other)
     {
         //
     }
@@ -50,7 +50,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -62,7 +62,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -73,7 +73,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -85,7 +85,7 @@ class UserController extends Controller
     {
         $sponsor = Sponsor::find($id);
 
-        return view('user.detail', compact('sponsor'));
+        return view('other.detail', compact('sponsor'));
     }
 
 }

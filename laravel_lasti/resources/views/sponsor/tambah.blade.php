@@ -1,12 +1,16 @@
-@extends('template/user')
+@extends('template/admin')
+
 @section('css')
+    <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
 @endsection
+
 @section('content')
     @if (session()->has('success'))
         <div class="alert alert-primary">
             {{ session()->get('success') }}
         </div>
     @endif
+
     <br>
     <div class="col">
         <div class="card card-primary">
@@ -23,7 +27,6 @@
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="foto" name="foto">
                                     <label class="custom-file-label" for="exampleInputFile">Masukkan Logo</label>
-
                                 </div>
                             </div>
                         </div>
@@ -31,72 +34,61 @@
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Masukkan Nama Brand">
-
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Brand">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                placeholder="Masukkan Deskripsi Brand">
+                            <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi Brand"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat"
-                                placeholder="Masukkan Alamat Brand">
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan Alamat Brand">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Masukkan Email Brand">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email Brand">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>No HP</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp"
-                                placeholder="Masukkan No Hp Brand">
+                            <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Masukkan No Hp Brand">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Nama Acara</label>
-                            <input type="text" class="form-control" id="nama_acara" name="nama_acara"
-                                placeholder="Masukkan Nama Acara">
+                            <input type="text" class="form-control" id="nama_acara" name="nama_acara" placeholder="Masukkan Nama Acara">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Kategori</label>
-                            <input type="text" class="form-control" id="kategori" name="kategori"
-                                placeholder="Masukkan Kategori Acara">
+                            <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Masukkan Kategori Acara">
                         </div>
                     </div>
-                        <div class="row">
-                            <div class="col col-md-12 form-group">
-                                <label>Tanggal Event</label>
-                                <input type="date" class="form-control" id="start_date" name="start_date"
-                                    placeholder="Masukkan Tanggal Event">
-                            </div>
+                    <div class="row">
+                        <div class="col col-md-12 form-group">
+                            <label>Tanggal Event</label>
+                            <input type="date" class="form-control" id="start_date" name="start_date" placeholder="Masukkan Tanggal Event">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>Feedback</label>
-                            <input type="text" class="form-control" id="feedback" name="feedback"
-                                placeholder="Masukkan Feedback">
+                            <input type="text" class="form-control" id="feedback" name="feedback" placeholder="Masukkan Feedback">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-md-12 form-group">
                             <label>S&K</label>
-                            <input type="text" class="form-control" id="SnK" name="SnK"
-                                placeholder="Masukkan S&K">
+                            <input type="text" class="form-control" id="SnK" name="SnK" placeholder="Masukkan S&K">
                         </div>
                     </div>
                 </div>
@@ -107,13 +99,12 @@
         </div>
     </div>
 @endsection
-@section('css')
-    <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
-@endsection
+
 @section('js')
     <script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script>
-        $(functi $('#deskripsimernote()
-        })
+        $(function() {
+            $('#deskripsi').summernote();
+        });
     </script>
 @endsection

@@ -1,6 +1,6 @@
 <?php
 // use App\Http\Controllers\Controller;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\OtherController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DashboardController;
@@ -31,8 +31,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
 
-Route::resource('/user', 'UserController');
-Route::get('/user/detail/{id}', [UserController::class, 'detail'])->name('user.detail');
+Route::resource('/other', 'OtherController');
+Route::get('/other/detail/{id}', [OtherController::class, 'detail'])->name('other.detail');
 
 // Route::get('/sponsor', [SponsorController::class, 'index']);
 // Route::get('/sponsor', [SponsorController::class, 'create']);
@@ -75,3 +75,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

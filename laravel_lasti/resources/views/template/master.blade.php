@@ -219,7 +219,7 @@
                                 <span class="activity active"></span>
                                 <img src="images/users/profile.jpg" height="40" width="40" alt="">
                             </div>
-                            <div class="drop-down dropdown-profile   dropdown-menu">
+                            <div class="drop-down dropdown-profile dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
@@ -232,18 +232,23 @@
                                                 <div class="badge gradient-3 badge-pill badge-primary">3</div>
                                             </a>
                                         </li>
-
                                         <hr class="my-2">
                                         <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
-                                                    Screen</span></a>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                                        <li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <i class="icon-key"></i> <span>Logout</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -267,7 +272,7 @@
                     </li>
                     <li class="nav-label">Data</li>
                     <li>
-                        <a class="has-arrow" href="{{ route('user.index') }}" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('other.index') }}" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>
@@ -281,6 +286,7 @@
                     <a class="has-arrow" href="{{ route('full-calender') }}" aria-expanded="false">
                         <i class="icon-menu menu-icon"></i><span class="nav-text"> Kalender</span>
                     </a>
+                </li>
             </div>
         </div>
         <!--**********************************
