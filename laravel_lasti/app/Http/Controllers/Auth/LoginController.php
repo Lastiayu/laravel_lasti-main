@@ -40,7 +40,8 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function login(Request $request)
+    // Contoh menggunakan controller AuthController
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -48,25 +49,24 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
+            $userRole = Auth::user()->role;
 
-            $user_role = Auth::user()->role;
-
-            switch ($user_role) {
+            switch ($userRole) {
                 case 1:
-                    return redirect('/admin');
+                    return redirect('template/admin');
                     break;
                 case 2:
-                    return redirect('/user');
+                    return redirect('template/master');
                     break;
                 default:
                     Auth::logout();
-                    return redirect('/login')->with('error', 'Oops, terjadi kesalahan saat login');
+                    return redirect('/login')->with('error', 'Terjadi kesalahan.');
             }
+
         } else {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Email atau kata sandi salah.');
         }
     }
-
 
     /**
      * Log the user out of the application.
@@ -77,6 +77,7 @@ class LoginController extends Controller
     {
         $this->guard()->logout();
 
-        return redirect('/login'); // You can customize the redirect path after logout
+        return redirect('/login')->with('success', 'Anda telah berhasil keluar.');
     }
+
 }
