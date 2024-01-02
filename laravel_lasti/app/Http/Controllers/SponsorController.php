@@ -7,7 +7,7 @@ use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Other;
-use ConsoleTVs\Charts\Registrar as Charts;
+
 
 
 class SponsorController extends Controller

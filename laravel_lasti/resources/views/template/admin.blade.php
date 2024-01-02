@@ -276,6 +276,12 @@
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Profile</span>
                         </a>
                     </li>
+                    <li class="nav-label">Admin</li>
+                    <li>
+                        <a class="has-arrow" href="{{ route('user.index') }}" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Data Admin</span>
+                        </a>
+                    </li>
             </div>
         </div>
         <!--**********************************

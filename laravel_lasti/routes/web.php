@@ -8,6 +8,7 @@ use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 
 
 
@@ -95,4 +96,7 @@ Route::prefix('template')->group(function () {
     })->name('user')->middleware('user');
 });
 
+Route::resource('/user', 'UserController');
+
+Route::get('/user', 'UserController@index')->name('user.index');
 
