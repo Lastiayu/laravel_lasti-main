@@ -83,3 +83,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/profile', [ProfileController::class,'index'])->name('profile.index');
 
+Route::middleware(['admin'])->group(function () {
+    Route::get('admin', function() {
+        return view('template/admin');
+    })->name('superadmin');
+});
+
+Route::middleware(['user'])->group(function () {
+    Route::get('user', function() {
+        return view('template/master');
+    })->name('user');
+});
+
