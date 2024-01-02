@@ -2,7 +2,7 @@
 
 @section('css')
     <style>
-        <style>body {
+        body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -12,52 +12,51 @@
         h1 {
             color: #333;
             text-align: center;
+            margin-top: 30px;
         }
 
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            height: 100vh;
+            align-items: flex-start;
+            /* Ubah dari 'center' ke 'flex-start' */
+            min-height: 100vh;
         }
 
         .card {
             background-color: #fff;
-            padding: 30px;
-            /* Increase padding for a larger card */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
             text-align: left;
-            /* Align text to the left */
-            margin-top: 20px;
+            margin: 19px;
+            /* Ubah margin menjadi 10px */
+            transition: box-shadow 0.3s ease-in-out;
+            width: 350px;
+            max-width: 80%;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
             transition: box-shadow 0.3s ease-in-out;
         }
 
         .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
         }
 
         .profile-image {
-            border-radius: 8px;
-            /* Make it a square with rounded corners */
+            border-radius: 50%;
             object-fit: cover;
-            width: 200px;
-            /* Keep the width fixed */
-            height: 200px;
-            /* Keep the height fixed */
+            width: 180px;
+            height: 180px;
             margin: 0 auto;
-            /* Center the image horizontally */
             display: block;
-            /* Remove any default inline spacing */
-            margin-bottom: 15px;
+            margin-bottom: 30px;
         }
 
         .user-info {
-            margin: 10px 0;
+            margin: 15px 0;
             color: #555;
-            font-size: 18px;
-            /* Increase font size for user info */
+            font-size: 20px;
         }
 
         a {
@@ -76,14 +75,16 @@
 
     <div class="container">
         @foreach ($users as $user)
-            <div class="card">
-                <img src="{{ asset('images/users/profile3.jpg') }}" alt="Profile Picture" class="profile-image">
-                <br>
-                <br>
-                <p class="user-info">Name: {{ $user->name }}</p>
-                <p class="user-info">Email: {{ $user->email }}</p>
-                <p class="user-info">Admin sejak: {{ $user->created_at->format('d M Y') }}</p>
-            </div>
+            @if ($user->role == 1)
+                <div class="card">
+                    <img src="{{ asset('images/users/profile3.jpg') }}" alt="Profile Picture" class="profile-image">
+                    <br>
+                    <br>
+                    <p class="user-info">Name: {{ $user->name }}</p>
+                    <p class="user-info">Email: {{ $user->email }}</p>
+                    <p class="user-info">Admin sejak: {{ $user->created_at->format('d M Y') }}</p>
+                </div>
+            @endif
         @endforeach
     </div>
 
